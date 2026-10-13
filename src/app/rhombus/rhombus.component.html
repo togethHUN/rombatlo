@@ -1,0 +1,40 @@
+<!--
+File: rhombus.component.html
+Author: Tóth Gergely
+Copyright: 2026, Tóth Gergely
+Group: Szoft II/N
+Date: 2026-10-13
+Github: https://github.com/togethHUN/
+Licenc: MIT
+-->
+
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+      
+      <h4 class="mb-4">Ez a program kiszámítja egy rombusz területét annak két átlója segítségével.</h4>
+
+      <form [formGroup]="rhombusForm" (ngSubmit)="calculateArea()" class="border p-4 rounded shadow-sm bg-light">
+        
+        <div class="mb-3 text-start">
+          <label for="diagonalE" class="form-label">e átló:</label>
+          <input id="diagonalE" type="number" class="form-control" formControlName="diagonalE">
+        </div>
+
+        <div class="mb-3 text-start">
+          <label for="diagonalF" class="form-label">f átló:</label>
+          <input id="diagonalF" type="number" class="form-control" formControlName="diagonalF">
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100" [disabled]="rhombusForm.invalid">Számolás</button>
+      
+      </form>
+
+      <div class="mt-4">
+        <h3 class="text-success">A rombusz területe: {{ area }} </h3>
+      </div>
+
+    </div>
+  </div>
+</div>
